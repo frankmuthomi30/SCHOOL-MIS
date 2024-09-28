@@ -39,7 +39,7 @@ export default function App() {
     <Router>
       <div className="flex h-screen bg-gradient-to-br from-blue-100 to-purple-100">
         <Sidebar isOpen={isSidebarOpen} toggleSidebar={toggleSidebar} />
-        <div className={`flex-1 overflow-auto transition-all duration-300 ease-in-out ${isSidebarOpen ? 'ml-0 lg:ml-64' : 'ml-0'}`}>
+        <div className="flex-1 overflow-auto">
           {/* Mobile toggle button */}
           <button
             className="lg:hidden fixed top-4 left-4 z-20 p-2 bg-gray-800 text-white rounded"
@@ -47,7 +47,7 @@ export default function App() {
           >
             {isSidebarOpen ? 'Close' : 'Menu'}
           </button>
-          <div className="p-4 lg:p-8">
+          <div className="p-4 lg:p-8 lg:ml-64">
             <Routes>
               <Route path="/" element={<SchoolDashboard />} />
               <Route path="/registration" element={<StudentRegistration />} />
